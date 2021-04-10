@@ -35,8 +35,7 @@ public class Sudoku {
                 System.out.print(value);
                 if(i == 2 || i == 5) {
                     System.out.print(" | ");
-                } else if(i == 8) {
-                } else {
+                } else if(i != 8) {
                     System.out.print("  ");
                 }
                 i++;
