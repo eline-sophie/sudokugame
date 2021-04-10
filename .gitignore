@@ -34,3 +34,6 @@ fabric.properties
 #maven
 target
 bin
+
+# Javadoc
+docs/
