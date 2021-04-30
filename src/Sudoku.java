@@ -5,13 +5,18 @@ public class Sudoku {
     /**
      * Used to store the entries of the sudoku puzzle
      */
-    public int[][] puzzle;
+    public Tile[][] puzzle;
 
     /**
      * Creates an empty sudoku puzzle (9x9 matrix)
      */
     public Sudoku() {
-        puzzle = new int[9][9];
+        puzzle = new Tile[9][9];
+        for(int i = 0; i < 9; i++) {
+            for(int j = 0; j < 9; j++){
+                puzzle[i][j] = new Tile();
+            }
+        }
     }
 
     /**
@@ -21,7 +26,7 @@ public class Sudoku {
      * @param value value to be filled in
      */
     public void fill(int x, int y, int value) {
-        puzzle[y][x] = value;
+        puzzle[y][x].fill(value);
     }
 
     /**
@@ -29,10 +34,10 @@ public class Sudoku {
      */
     public void print() {
         int j = 0;
-        for(int[] row : puzzle) {
+        for(Tile[] row : puzzle) {
             int i = 0;
-            for(int value : row) {
-                System.out.print(value);
+            for(Tile tile : row) {
+                System.out.print(tile.label);
                 if(i == 2 || i == 5) {
                     System.out.print(" | ");
                 } else if(i != 8) {
